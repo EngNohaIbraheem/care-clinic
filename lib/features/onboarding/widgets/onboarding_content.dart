@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 
+import '../../home/presentation/screens/home_screen.dart';
+
 class OnboardingContent extends StatelessWidget {
   const OnboardingContent({super.key});
 
@@ -88,7 +90,10 @@ class OnboardingContent extends StatelessWidget {
             width: double.infinity,
             height: 55,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, HomeScreen.routeName);
+
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
                 shape: RoundedRectangleBorder(

@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 
+import '../../../features/appointment/screens/appointement_summary_screen.dart';
 import '../../../features/auth/login/presentation/screens/login_screen.dart';
 import '../../../features/auth/register/presentation/screens/signup_screen.dart';
+import '../../../features/home/presentation/screens/home_screen.dart';
 import '../../../features/onboarding/screens/onboarding_screen.dat.dart';
 
 
 abstract class AppRouter {
   static Route generateRoute(RouteSettings settings) {
     switch (settings.name) {
-       //case ForgotPasswordScreen.routeName:
-        // return MaterialPageRoute(builder: (c) => const ForgotPasswordScreen());
+       case AppointmentSummaryScreen.routeName:
+        return MaterialPageRoute(builder: (c) => const AppointmentSummaryScreen());
        //case SearchScreen.routeName:
         // return MaterialPageRoute(builder: (_) => const SearchScreen());
        case OnboardingScreen.routeName:
@@ -18,8 +20,8 @@ abstract class AppRouter {
        return MaterialPageRoute(builder: (_) => const SignupScreen());
       case LoginScreen.routeName:
        return MaterialPageRoute(builder: (_) => const LoginScreen());
-      // case ChangePasswordScreen.routeName:
-      //   return MaterialPageRoute(builder: (_) => const ChangePasswordScreen());
+       case HomeScreen.routeName:
+        return MaterialPageRoute(builder: (_) => const HomeScreen());
       // case ForgotPasswordScreen.routeName:
       //   return MaterialPageRoute(builder: (_) => const ForgotPasswordScreen());
       // case VerificationCodeScreen.routeName:

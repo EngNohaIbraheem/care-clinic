@@ -51,7 +51,8 @@ class LoginBody extends StatelessWidget {
 
           CustomButton(
             text: AppStrings.login,
-            onTap: () {},
+            onTap: () {///
+            },
           ),
 
           const SizedBox(height: 25),

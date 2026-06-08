@@ -1,47 +1,57 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter/material.dart';
+
 class BannerCard extends StatelessWidget {
   const BannerCard({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(16),
-      height: 150,
+      height: 180,
+
       decoration: BoxDecoration(
-        gradient: const LinearGradient(
-          colors: [Color(0xff4facfe), Color(0xff00f2fe)],
-        ),
-        borderRadius: BorderRadius.circular(20),
+        color: const Color(0xff2F80ED),
+        borderRadius: BorderRadius.circular(25),
       ),
-      child: Row(
-        children: [
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  "Book and schedule with nearest doctor",
-                  style: TextStyle(color: Colors.white, fontSize: 16),
-                ),
-                const Spacer(),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.blue,
+
+      child: Padding(
+        padding: const EdgeInsets.all(20),
+
+        child: Row(
+          children: [
+
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+
+                  const Text(
+                    "Book and\nschedule with\nnearest doctor",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                    ),
                   ),
-                  child: const Text("Find Nearby"),
-                )
-              ],
+
+                  const SizedBox(height: 20),
+
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: const Text("Find widgets"),
+                  )
+                ],
+              ),
             ),
-          ),
-          const SizedBox(width: 10),
-          const CircleAvatar(
-            radius: 35,
-            backgroundImage: AssetImage("assets/doctor.png"),
-          )
-        ],
+
+            Expanded(
+              child: Image.asset(
+                "assets/images/nurse.png",
+                fit: BoxFit.contain,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

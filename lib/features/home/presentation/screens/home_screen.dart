@@ -1,29 +1,60 @@
-
 import 'package:flutter/material.dart';
+import '../widgets/Home_header.dart';
+import '../widgets/Section_header.dart';
+import '../widgets/Speciality_list.dart';
+import '../widgets/banner_card.dart';
+import '../widgets/custum_bottom_nav.dart';
+import '../widgets/custum_botton_nav_bar.dart';
+import '../widgets/doctor_banner.dart';
+import '../widgets/doctor_list.dart';
+import '../widgets/generating_section.dart';
+import '../widgets/recommendation_section.dart';
+import '../widgets/search_FAB.dart';
+import '../widgets/speciaity_section.dart';
 
-class HeaderSection extends StatelessWidget {
-  const HeaderSection({super.key});
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+  static const  String routeName ="HomeScreen" ;
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        const Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text("Hi, Omar!",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-            SizedBox(height: 4),
-            Text("How Are you Today?",
-                style: TextStyle(color: Colors.grey)),
-          ],
+    return const Scaffold(
+      floatingActionButton: SearchFAB(),
+      floatingActionButtonLocation:
+      FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: CustomBottomNavBar(),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: EdgeInsets.all(20),
+          child: Column(
+            children: [
+              HomeHeader(),
+              SizedBox(height: 25),
+
+              DoctorBanner(),
+              SizedBox(height: 30),
+
+              SectionHeader(
+                title: "Doctor Speciality",
+              ),
+
+              SizedBox(height: 20),
+
+              SpecialityList(),
+
+              SizedBox(height: 30),
+
+              SectionHeader(
+                title: "Recommendation Doctor",
+              ),
+
+              SizedBox(height: 20),
+
+              DoctorList(),
+            ],
+          ),
         ),
-        CircleAvatar(
-          backgroundColor: Colors.white,
-          child: Icon(Icons.notifications, color: Colors.black),
-        )
-      ],
+      ),
     );
   }
 }
