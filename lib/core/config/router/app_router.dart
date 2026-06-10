@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../features/Date_and_Time/screens/Appointement_date_time_screen.dart';
+import '../../../features/Notification/screens/notification_screen.dart';
 import '../../../features/appointment/screens/appointement_summary_screen.dart';
 import '../../../features/auth/login/presentation/screens/login_screen.dart';
 import '../../../features/auth/register/presentation/screens/signup_screen.dart';
@@ -38,8 +39,8 @@ abstract class AppRouter {
     //         builder: (_) => const CreateNewPasswordScreen());
     // case ProductDetailsScreen.routeName:
     //  return MaterialPageRoute(builder: (_) => ProductDetailsScreen());
-    //   case NotificationScreen.routeName:
-    //     return MaterialPageRoute(builder: (_) => const NotificationScreen());
+      case NotificationScreen.routeName:
+      return MaterialPageRoute(builder: (_) => const NotificationScreen());
     //   case AddNewCardScreen.routeName:
     //     return MaterialPageRoute(builder: (_) => const AddNewCardScreen());
     // case ProfileScreen.routeName:

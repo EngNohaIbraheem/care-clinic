@@ -1,61 +1,54 @@
 import 'package:flutter/material.dart';
 
 class AppointmentStepper extends StatelessWidget {
-  const AppointmentStepper({super.key, required int currentStep});
+  final int currentStep;
+
+  const AppointmentStepper({
+    super.key,
+    required this.currentStep,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-
-        _step("1", true, "Date & Time"),
-
-        const Expanded(
-          child: Divider(
-            thickness: 2,
-            color: Colors.green,
-          ),
-        ),
-
-        _step("2", true, "Payment"),
-
-        const Expanded(
-          child: Divider(
-            thickness: 2,
-            color: Colors.grey,
-          ),
-        ),
-
-        _step("3", false, "Summary"),
+        _buildStep(0),
+        _buildLine(1),
+        _buildStep(1),
+        _buildLine(2),
+        _buildStep(2),
       ],
     );
   }
 
-  Widget _step(
-      String number,
-      bool completed,
-      String title,
-      ) {
-    return Column(
-      children: [
+  Widget _buildStep(int index) {
+    final isCompleted = index <= currentStep;
 
-        CircleAvatar(
-          radius: 18,
-          backgroundColor: completed
-              ? Colors.green
-              : Colors.blue,
-          child: Text(
-            number,
-            style: const TextStyle(
-              color: Colors.white,
-            ),
-          ),
-        ),
+    return Container(
+      width: 36,
+      height: 36,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: isCompleted
+            ? const Color(0xff246BFD)
+            : const Color(0xffE5E7EB),
+      ),
+      child: Icon(
+        Icons.check,
+        color: isCompleted ? Colors.white : Colors.grey,
+        size: 18,
+      ),
+    );
+  }
 
-        const SizedBox(height: 8),
-
-        Text(title),
-      ],
+  Widget _buildLine(int stepNumber) {
+    return Expanded(
+      child: Container(
+        height: 2,
+        color: currentStep >= stepNumber
+            ? const Color(0xff246BFD)
+            : const Color(0xffE5E7EB),
+      ),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'core/config/router/app_router.dart';
 import 'features/Date_and_Time/screens/Appointement_date_time_screen.dart';
+import 'features/Notification/screens/notification_screen.dart';
 import 'features/appointment/screens/appointement_summary_screen.dart';
 import 'features/auth/login/presentation/screens/login_screen.dart';
 import 'features/auth/register/presentation/screens/signup_screen.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       onGenerateRoute: AppRouter.generateRoute,
-      initialRoute: AppointmentDateTimeScreen.routeName,
+      initialRoute: NotificationScreen.routeName,
     );
   }
 }
