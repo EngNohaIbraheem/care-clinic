@@ -1,46 +1,57 @@
 import 'package:flutter/material.dart';
+import '../../appointment/widgets/appointemet_stepper.dart';
+import '../widgets/continue_button.dart';
+import '../widgets/payment_app_bar.dart';
+import '../widgets/payment_group_card.dart';
+import '../widgets/payment_section_title.dart';
 
+class PaymentScreen extends StatelessWidget {
+  const PaymentScreen({super.key});
 
-import 'package:flutter/material.dart';
-
-class PaymentAppBar extends StatelessWidget {
-  const PaymentAppBar({super.key});
+  static const String routeName = "PaymentScreen";
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
+    return const Scaffold(
+      backgroundColor: Colors.white,
 
-        Container(
-          width: 44,
-          height: 44,
-          decoration: BoxDecoration(
-            borderRadius:
-            BorderRadius.circular(14),
-            border: Border.all(
-              color: Colors.grey.shade300,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 24,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: 16),
+
+                PaymentAppBar(),
+
+                SizedBox(height: 30),
+
+                AppointmentStepper(
+                  currentStep: 2,
+                ),
+
+                SizedBox(height: 50),
+
+                PaymentSectionTitle(),
+
+                SizedBox(height: 25),
+
+                PaymentGroupCard(),
+
+                SizedBox(height: 40),
+
+                ContinueButton(),
+
+                SizedBox(height: 40),
+              ],
             ),
           ),
-          child: const Icon(
-            Icons.arrow_back_ios_new,
-            size: 18,
-          ),
         ),
-
-        const Expanded(
-          child: Center(
-            child: Text(
-              'Book Appointment',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w700,
-              ),
-            ),
-          ),
-        ),
-
-        const SizedBox(width: 44),
-      ],
+      ),
     );
   }
 }

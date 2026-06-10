@@ -11,7 +11,7 @@ class PaymentGroupCard extends StatelessWidget {
 
         const PaymentMethodTile(
           title: 'Credit Card',
-          icon: 'assets/icons/card.png',
+          icon: 'assets/images/mastercard.png',
           selected: true,
         ),
 
@@ -19,7 +19,7 @@ class PaymentGroupCard extends StatelessWidget {
 
         const PaymentMethodTile(
           title: 'Master Card',
-          icon: 'assets/icons/mastercard.png',
+          icon: 'assets/images/mastercard.png',
           selected: false,
         ),
 
@@ -27,7 +27,7 @@ class PaymentGroupCard extends StatelessWidget {
 
         const PaymentMethodTile(
           title: 'American Express',
-          icon: 'assets/icons/amex.png',
+          icon: 'assets/images/amex.png',
           selected: false,
         ),
 
@@ -35,7 +35,7 @@ class PaymentGroupCard extends StatelessWidget {
 
         const PaymentMethodTile(
           title: 'Capital One',
-          icon: 'assets/icons/capital.png',
+          icon: 'assets/images/barclayes.png',
           selected: false,
         ),
 
@@ -43,7 +43,7 @@ class PaymentGroupCard extends StatelessWidget {
 
         const PaymentMethodTile(
           title: 'Barclays',
-          icon: 'assets/icons/barclays.png',
+          icon: 'assets/images/barclayes.png',
           selected: false,
         ),
 
@@ -51,7 +51,7 @@ class PaymentGroupCard extends StatelessWidget {
 
         const PaymentMethodTile(
           title: 'Bank Transfer',
-          icon: 'assets/icons/bank.png',
+          icon: 'assets/images/RadioButton.png',
           selected: false,
         ),
 
@@ -59,7 +59,7 @@ class PaymentGroupCard extends StatelessWidget {
 
         const PaymentMethodTile(
           title: 'Paypal',
-          icon: 'assets/icons/paypal.png',
+          icon: 'assets/images/paypal.png',
           selected: false,
         ),
       ],

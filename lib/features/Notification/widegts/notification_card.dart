@@ -17,15 +17,18 @@ class NotificationCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: notification.isHighlighted
-          ? const Color(0xffF8F9FC)
+          ? const Color(0xffF8F9FD)
           : Colors.white,
 
-      padding: const EdgeInsets.all(24),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 24,
+        vertical: 20,
+      ),
 
       child: Row(
-        crossAxisAlignment:
-        CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+
           NotificationIcon(
             type: notification.type,
           ),
@@ -37,12 +40,12 @@ class NotificationCard extends StatelessWidget {
               crossAxisAlignment:
               CrossAxisAlignment.start,
               children: [
+
                 Text(
                   notification.title,
                   style: const TextStyle(
-                    fontWeight:
-                    FontWeight.w700,
-                    fontSize: 20,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
 
@@ -61,6 +64,7 @@ class NotificationCard extends StatelessWidget {
 
           Column(
             children: [
+
               Text(
                 notification.time,
                 style: const TextStyle(

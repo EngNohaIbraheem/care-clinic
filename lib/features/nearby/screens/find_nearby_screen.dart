@@ -9,6 +9,7 @@ import '../widgets/doctor_bottom_card.dart';
 
 class FindNearbyScreen extends StatelessWidget {
   const FindNearbyScreen({super.key});
+  static const  String routeName ="FindNearbyScreen" ;
 
   @override
   Widget build(BuildContext context) {

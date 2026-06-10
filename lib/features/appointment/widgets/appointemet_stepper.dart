@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppointmentStepper extends StatelessWidget {
-  const AppointmentStepper({super.key});
+  const AppointmentStepper({super.key, required int currentStep});
 
   @override
   Widget build(BuildContext context) {

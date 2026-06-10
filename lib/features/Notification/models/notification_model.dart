@@ -1,5 +1,6 @@
 import '../models/notification_model.dart';
 
+
 enum NotificationType {
   appointment,
   schedule,

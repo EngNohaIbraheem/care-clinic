@@ -8,6 +8,7 @@ import '../widgets/doctor_information_section.dart';
 
 class BookingDetailsScreen extends StatelessWidget {
   const BookingDetailsScreen({super.key});
+  static const  String routeName ="BookingDetailsScreen" ;
 
   @override
   Widget build(BuildContext context) {

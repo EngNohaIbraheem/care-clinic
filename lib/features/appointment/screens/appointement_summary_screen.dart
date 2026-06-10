@@ -29,7 +29,9 @@ class AppointmentSummaryScreen extends StatelessWidget {
 
                 SizedBox(height: 30),
 
-                AppointmentStepper(),
+                AppointmentStepper(
+                  currentStep: 2,
+                ),
 
                 SizedBox(height: 40),
 

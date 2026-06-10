@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 
+import '../../../features/Date_and_Time/screens/Appointement_date_time_screen.dart';
 import '../../../features/appointment/screens/appointement_summary_screen.dart';
 import '../../../features/auth/login/presentation/screens/login_screen.dart';
 import '../../../features/auth/register/presentation/screens/signup_screen.dart';
+import '../../../features/booking_confirmation/presentation/screens/booking_confirmation_screen.dart';
 import '../../../features/home/presentation/screens/home_screen.dart';
+import '../../../features/nearby/screens/find_nearby_screen.dart';
 import '../../../features/onboarding/screens/onboarding_screen.dat.dart';
+import '../../../features/payment/screens/payment_screen.dart';
 
 
 abstract class AppRouter {
@@ -12,8 +16,8 @@ abstract class AppRouter {
     switch (settings.name) {
        case AppointmentSummaryScreen.routeName:
         return MaterialPageRoute(builder: (c) => const AppointmentSummaryScreen());
-       //case SearchScreen.routeName:
-        // return MaterialPageRoute(builder: (_) => const SearchScreen());
+       case PaymentScreen.routeName:
+        return MaterialPageRoute(builder: (_) => const PaymentScreen());
        case OnboardingScreen.routeName:
         return MaterialPageRoute(builder: (_) => const OnboardingScreen());
         case SignupScreen.routeName:
@@ -22,13 +26,13 @@ abstract class AppRouter {
        return MaterialPageRoute(builder: (_) => const LoginScreen());
        case HomeScreen.routeName:
         return MaterialPageRoute(builder: (_) => const HomeScreen());
-      // case ForgotPasswordScreen.routeName:
-      //   return MaterialPageRoute(builder: (_) => const ForgotPasswordScreen());
-      // case VerificationCodeScreen.routeName:
-      //   return MaterialPageRoute(
-      //       builder: (_) => const VerificationCodeScreen());
-      //case SearchScreen.routeName:
-        //return MaterialPageRoute(builder: (_) => const SearchScreen());
+      case BookingDetailsScreen.routeName:
+       return MaterialPageRoute(builder: (_) => const BookingDetailsScreen());
+       case FindNearbyScreen.routeName:
+        return MaterialPageRoute(
+    builder: (_) => const FindNearbyScreen());
+      case AppointmentDateTimeScreen.routeName:
+        return MaterialPageRoute(builder: (_) => const AppointmentDateTimeScreen());
     //   case CreateNewPasswordScreen.routeName:
     //     return MaterialPageRoute(
     //         builder: (_) => const CreateNewPasswordScreen());
