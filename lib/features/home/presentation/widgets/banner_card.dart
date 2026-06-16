@@ -12,7 +12,7 @@ class BannerCard extends StatelessWidget {
 
       decoration: BoxDecoration(
         color: const Color(0xff2F80ED),
-        borderRadius: BorderRadius.circular(25),
+        borderRadius: BorderRadius.circular(35),
       ),
 
       child: Padding(

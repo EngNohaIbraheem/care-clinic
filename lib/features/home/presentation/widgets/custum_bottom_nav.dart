@@ -28,7 +28,7 @@ class CustomBottomNav extends StatelessWidget {
             CircleAvatar(
               radius: 15,
               backgroundImage:
-              AssetImage("assets/images/user.jpg"),
+              AssetImage("assets/images/profile.png"),
             ),
           ],
         ),

@@ -5,6 +5,7 @@ import '../../../../../core/config/constants/custom_button.dart';
 import '../../../../../core/config/constants/custom_text_field.dart';
 import '../../../../../core/config/theme/APP_strings.dart';
 import '../../../../../core/config/theme/app_color.dart';
+import '../../../../home/presentation/screens/home_screen.dart';
 
 class LoginBody extends StatelessWidget {
   const LoginBody({super.key});
@@ -51,7 +52,9 @@ class LoginBody extends StatelessWidget {
 
           CustomButton(
             text: AppStrings.login,
-            onTap: () {///
+            onTap: () {
+              Navigator.pushNamed(context, HomeScreen.routeName);
+
             },
           ),
 

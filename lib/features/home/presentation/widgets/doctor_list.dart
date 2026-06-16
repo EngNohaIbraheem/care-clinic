@@ -11,7 +11,7 @@ class DoctorList extends StatelessWidget {
       shrinkWrap: true,
       physics:
       const NeverScrollableScrollPhysics(),
-      itemCount: 5,
+      itemCount: 2,
       separatorBuilder: (_, __) =>
       const SizedBox(height: 20),
       itemBuilder: (_, __) {

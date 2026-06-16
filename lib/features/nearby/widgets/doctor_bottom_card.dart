@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../models/nearby_model.dart';
 
+import 'package:flutter/material.dart';
+
 class DoctorBottomCard extends StatelessWidget {
   final DoctorModel doctor;
 
@@ -13,15 +15,13 @@ class DoctorBottomCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(16),
-
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(24),
       ),
-
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-
           ClipRRect(
             borderRadius: BorderRadius.circular(16),
             child: Image.asset(
@@ -29,6 +29,17 @@ class DoctorBottomCard extends StatelessWidget {
               width: 70,
               height: 70,
               fit: BoxFit.cover,
+              errorBuilder: (context, error, stackTrace) {
+                return Container(
+                  width: 70,
+                  height: 70,
+                  color: Colors.grey.shade300,
+                  child: const Icon(
+                    Icons.person,
+                    size: 35,
+                  ),
+                );
+              },
             ),
           ),
 
@@ -36,13 +47,13 @@ class DoctorBottomCard extends StatelessWidget {
 
           Expanded(
             child: Column(
-              crossAxisAlignment:
-              CrossAxisAlignment.start,
-
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-
                 Text(
                   doctor.name,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                   style: const TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.bold,
@@ -52,25 +63,40 @@ class DoctorBottomCard extends StatelessWidget {
                 const SizedBox(height: 6),
 
                 Text(
-                  "${doctor.speciality}  |  ${doctor.hospital}",
+                  "${doctor.speciality} | ${doctor.hospital}",
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    color: Colors.grey.shade700,
+                    fontSize: 14,
+                  ),
                 ),
 
                 const SizedBox(height: 10),
 
-                const Row(
+                Row(
                   children: [
-
-                    Icon(
+                    const Icon(
                       Icons.star,
                       color: Colors.amber,
                       size: 18,
                     ),
 
-                    SizedBox(width: 4),
+                    const SizedBox(width: 4),
 
-                    Text("4.8 (4,279 reviews)")
+                    Expanded(
+                      child: Text(
+                        "4.8 (4,279 reviews)",
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          color: Colors.grey.shade700,
+                          fontSize: 13,
+                        ),
+                      ),
+                    ),
                   ],
-                )
+                ),
               ],
             ),
           ),

@@ -23,15 +23,14 @@ class DoctorCard extends StatelessWidget {
       child: Row(
         children: [
 
-          ClipRRect(
-            borderRadius: BorderRadius.circular(15),
-            child: Image.asset(
+
+             Image.asset(
               image,
               width: 110,
               height: 110,
-              fit: BoxFit.cover,
+              // fit: BoxFit.cover,
             ),
-          ),
+
 
           const SizedBox(width: 15),
 

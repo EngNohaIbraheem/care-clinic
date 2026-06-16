@@ -6,58 +6,57 @@ class DoctorInfoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-
         ClipRRect(
-          borderRadius:
-          BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(16),
           child: Image.asset(
-            "assets/images/image.png",
+            "assets/images/doctor1.png",
             width: 90,
             height: 90,
             fit: BoxFit.cover,
           ),
         ),
-
         const SizedBox(width: 16),
-
-        const Expanded(
+        Expanded(
           child: Column(
-            crossAxisAlignment:
-            CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-
-              Text(
+              const Text(
                 "Dr. Randy Wigham",
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   fontSize: 22,
-                  fontWeight:
-                  FontWeight.bold,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
-
-              SizedBox(height: 8),
-
-              Text(
+              const SizedBox(height: 8),
+              const Text(
                 "General | RSUD Gatot Subroto",
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
               ),
-
-              SizedBox(height: 8),
-
+              const SizedBox(height: 8),
               Row(
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.star,
                     size: 18,
                     color: Colors.amber,
                   ),
-                  SizedBox(width: 4),
-                  Text("4.8 (4,279 reviews)")
+                  const SizedBox(width: 4),
+                  Expanded(
+                    child: Text(
+                      "4.8 (4,279 reviews)",
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
                 ],
               ),
             ],
           ),
-        )
+        ),
       ],
     );
   }

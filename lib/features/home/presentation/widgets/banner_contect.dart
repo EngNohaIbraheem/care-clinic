@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../../nearby/screens/find_nearby_screen.dart';
+
 class BannerContent extends StatelessWidget {
   const BannerContent({super.key});
 
@@ -17,13 +19,16 @@ class BannerContent extends StatelessWidget {
             "Book and\nschedule with\nnearest doctor",
             style: TextStyle(
               color: Colors.white,
-              fontSize: 26,
+              fontSize: 16,
               fontWeight: FontWeight.w600,
             ),
           ),
           const SizedBox(height: 15),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, FindNearbyScreen.routeName);
+
+            },
             child: const Text("Find Nearby"),
           ),
         ],

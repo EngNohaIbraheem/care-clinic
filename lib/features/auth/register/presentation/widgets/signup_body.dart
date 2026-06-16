@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../../core/config/constants/custom_button.dart';
 import '../../../../../core/config/constants/custom_text_field.dart';
 import '../../../../../core/config/theme/app_color.dart';
+import '../../../../home/presentation/screens/home_screen.dart';
 import '../../../login/presentation/widgets/social_button.dart';
 
 class SignupBody extends StatelessWidget {
@@ -50,7 +51,10 @@ class SignupBody extends StatelessWidget {
 
           CustomButton(
             text: "Create Account",
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, HomeScreen.routeName);
+
+            },
           ),
 
           const SizedBox(height: 25),

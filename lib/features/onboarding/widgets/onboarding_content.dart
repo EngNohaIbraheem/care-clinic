@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 
+import '../../auth/login/presentation/screens/login_screen.dart';
 import '../../home/presentation/screens/home_screen.dart';
 
 class OnboardingContent extends StatelessWidget {
@@ -91,7 +92,7 @@ class OnboardingContent extends StatelessWidget {
             height: 55,
             child: ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, HomeScreen.routeName);
+                Navigator.pushNamed(context, LoginScreen.routeName);
 
               },
               style: ElevatedButton.styleFrom(
